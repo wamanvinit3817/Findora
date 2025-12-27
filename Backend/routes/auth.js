@@ -4,6 +4,7 @@ const router = express.Router();
 const College = require("../models/College")
 const Society = require("../models/Society")
 const User = require("../models/User")
+const FRONTEND_URL = process.env.FRONTEND_URL || "http://localhost:3000";
 
 
 // router.get("/google", (req, res, next) => {
@@ -45,19 +46,19 @@ router.get("/google/callback", (req, res, next) => {
     { session: false },
     (err, user, info) => {
       if (err) {
-        return res.redirect("http://localhost:3000/?error=server_error");
+        return res.redirect(`${FRONTEND_URL}/?error=server_error`);
       }
 
       if (!user) {
         const reason = info?.message || "unauthorized";
         return res.redirect(
-          `http://localhost:3000/?error=${reason}`
+          `${FRONTEND_URL}/?error=${reason}`
         );
       }
-
+ 
       // success
       res.redirect(
-        `http://localhost:3000/auth/success?token=${user.token}`
+        `${FRONTEND_URL}/auth/success?token=${user.token}`
       );
     }
   )(req, res, next);
