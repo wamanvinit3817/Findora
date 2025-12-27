@@ -20,7 +20,7 @@ export default function VerifyClaim() {
       return;
     }
 
-    fetch(`${AUTH_BASE}/api/items/verify-qr?token=${token}`)
+    fetch(`https://findora-backend-pu0l.onrender.com/api/items/verify-qr?token=${token}`)
       .then(async (res) => {
         const data = await res.json();
         if (!res.ok) throw new Error(data.error || "Server error");
@@ -46,7 +46,7 @@ export default function VerifyClaim() {
       }
 
       const res = await fetch(
-        `${AUTH_BASE}/api/items/final-claim`,
+        `https://findora-backend-pu0l.onrender.com/api/items/final-claim`,
         {
           method: "POST",
           headers: {

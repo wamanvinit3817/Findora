@@ -56,7 +56,7 @@ function Login() {
           <button
             className="primary-btn red-btn"
             onClick={() =>
-              (window.location.href = `${AUTH_BASE}/auth/google`)
+              (window.location.href = `https://findora-backend-pu0l.onrender.com/auth/google`)
             }
           >
             Login as College Student

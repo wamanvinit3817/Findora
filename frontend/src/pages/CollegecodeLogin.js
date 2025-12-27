@@ -12,7 +12,7 @@ function CollegeCodeLogin() {
     }
 
     window.location.href =
-      `${AUTH_BASE}/auth/google?collegeCode=${encodeURIComponent(code)}`;
+      `https://findora-backend-pu0l.onrender.com/auth/google?collegeCode=${encodeURIComponent(code)}`;
   };
 
  return (

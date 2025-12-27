@@ -30,7 +30,7 @@ function SocietyLogin() {
     }
 
     window.location.href =
-      `${AUTH_BASE}/auth/google?societyCode=${encodeURIComponent(code)}`;
+      `https://findora-backend-pu0l.onrender.com/auth/google?societyCode=${encodeURIComponent(code)}`;
   };
 
 return (
