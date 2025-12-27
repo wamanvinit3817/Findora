@@ -6,16 +6,17 @@ const passport = require("passport");
 const cors = require("cors");
 
 const app = express();
-
-
-
 app.use(cors({
   origin: [
-    "http://localhost:3000",
-    "https://findora.onrender.com"
+    "http://localhost:3000", 
+    "https://findora-frontend.onrender.com"
   ],
-  credentials: true
+  credentials: true,
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"]
 }));
+
+
 
 app.use(express.json());
 app.use(passport.initialize());
