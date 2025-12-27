@@ -4,7 +4,7 @@ const API_BASE =
 export async function apiFetch(url, options = {}) {
   const token = localStorage.getItem("token");
 
-  const res = await fetch(`${API_BASE}${url}`, {
+  const res = await fetch(`https://findora-backend-pu0l.onrender.com${url}`, {
     ...options,
     headers: {
       ...(options.body instanceof FormData
