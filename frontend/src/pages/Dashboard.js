@@ -297,7 +297,7 @@ function Dashboard() {
                 {qrData.token && qrData.itemId === selectedItem._id && (
                   <div className="text-center mt-3">
                     <QRCodeCanvas
-                      value={`http://localhost:3000/verify-claim?token=${qrData.token}`}
+                      value={`https://findora-frontend.onrender.com/verify-claim?token=${qrData.token}`}
                       size={200}
                     />
                   </div>
