@@ -17,8 +17,8 @@ function History() {
   useEffect(() => {
     const loadAll = async () => {
       try {
-        const posted = await apiFetch("http://localhost:5000/api/items/my-posted");
-        const claimed = await apiFetch("http://localhost:5000/api/items/my-claimed");
+        const posted = await apiFetch("/api/items/my-posted");
+        const claimed = await apiFetch("/api/items/my-claimed");
         setPostedItems(posted);
         setClaimedItems(claimed);
       } catch (err) {
@@ -35,7 +35,7 @@ function History() {
     if (!window.confirm("Delete this item?")) return;
 
     try {
-      await apiFetch(`http://localhost:5000/api/items/delete/${itemId}`, {
+      await apiFetch(`/api/items/delete/${itemId}`, {
         method: "DELETE",
       });
       setPostedItems((prev) => prev.filter((i) => i._id !== itemId));
@@ -47,7 +47,7 @@ function History() {
   const generateQR = async (itemId) => {
     try {
       const res = await apiFetch(
-        `http://localhost:5000/api/items/generate-qr/${itemId}`,
+        `/api/items/generate-qr/${itemId}`,
         { method: "POST" }
       );
       setQrData({ itemId, token: res.qrToken });
@@ -121,7 +121,7 @@ function History() {
 
                     {item.status !== "claimed" && (
                       <button
-                        className="btn btn-outline-danger"
+                        className="btn btn-outline-danger mx-2"
                         onClick={() => deleteItem(item._id)}
                       >
                         Delete

@@ -40,7 +40,7 @@ const handleSubmit = async (e) => {
       formData.append("founderContact", form.founderContact);
     }
 
-    const res = await apiFetch("http://localhost:5000/api/items/additem", {
+    const res = await apiFetch("/api/items/additem", {
       method: "POST",
       body: formData
     });

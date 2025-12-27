@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import ThemeToggle from "../components/ThemeToggle";
+const AUTH_BASE =
+  process.env.REACT_APP_API_URL || "http://localhost:5000";
 
 function Login() {
   const navigate = useNavigate();
@@ -53,7 +55,7 @@ function Login() {
           <button
             className="primary-btn red-btn"
             onClick={() =>
-              (window.location.href = "http://localhost:5000/auth/google")
+              (window.location.href = `${AUTH_BASE}/auth/google`)
             }
           >
             Login as College Student
@@ -108,7 +110,7 @@ function Login() {
       <button
         className="login-btn google"
         onClick={() =>
-          (window.location.href = "http://localhost:5000/auth/google")
+          (window.location.href = `${AUTH_BASE}/auth/google`)
         }
       >
         <i className="fa-brands fa-google"></i>

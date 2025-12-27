@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import { useSearchParams, useNavigate } from "react-router-dom";
+const AUTH_BASE =
+  process.env.REACT_APP_API_URL || "http://localhost:5000";
 
 export default function VerifyClaim() {
   const [params] = useSearchParams();
@@ -18,7 +20,7 @@ export default function VerifyClaim() {
       return;
     }
 
-    fetch(`http://localhost:5000/api/items/verify-qr?token=${token}`)
+    fetch(`${AUTH_BASE}/api/items/verify-qr?token=${token}`)
       .then(async (res) => {
         const data = await res.json();
         if (!res.ok) throw new Error(data.error || "Server error");
@@ -44,7 +46,7 @@ export default function VerifyClaim() {
       }
 
       const res = await fetch(
-        "http://localhost:5000/api/items/final-claim",
+        `${AUTH_BASE}/api/items/final-claim`,
         {
           method: "POST",
           headers: {

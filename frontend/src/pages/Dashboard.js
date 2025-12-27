@@ -23,7 +23,7 @@ function Dashboard() {
 
   /* ================= LOAD USER ================= */
   useEffect(() => {
-    apiFetch("http://localhost:5000/auth/me")
+    apiFetch("/auth/me")
       .then(setMe)
       .catch(() => {});
   }, []);
@@ -33,7 +33,7 @@ function Dashboard() {
     const load = async () => {
       try {
         setLoading(true);
-        const data = await apiFetch("http://localhost:5000/api/items/getallitems");
+        const data = await apiFetch("/api/items/getallitems");
         setItems(data);
       } catch {
         showAlert("danger", "Server error");
@@ -69,7 +69,7 @@ function Dashboard() {
     try {
       setQrLoading(true);
       const res = await apiFetch(
-        `http://localhost:5000/api/items/generate-qr/${itemId}`,
+        `/api/items/generate-qr/${itemId}`,
         { method: "POST" }
       );
       setQrData({ itemId, token: res.qrToken });

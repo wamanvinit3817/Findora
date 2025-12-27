@@ -1,4 +1,6 @@
 import React, { useState,useEffect } from "react";
+const AUTH_BASE =
+  process.env.REACT_APP_API_URL || "http://localhost:5000";
 
 function SocietyLogin() {
   const [code, setCode] = useState("");
@@ -28,7 +30,7 @@ function SocietyLogin() {
     }
 
     window.location.href =
-      `http://localhost:5000/auth/google?societyCode=${encodeURIComponent(code)}`;
+      `${AUTH_BASE}/auth/google?societyCode=${encodeURIComponent(code)}`;
   };
 
 return (

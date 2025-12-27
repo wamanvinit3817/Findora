@@ -15,7 +15,7 @@ function AuthSuccess() {
     const pendingItem = localStorage.getItem("pendingClaimItem");
 
     if (pendingItem) {
-      apiFetch("http://localhost:5000/api/items/final-claim", {
+      apiFetch("/api/items/final-claim", {
         method: "POST",
         body: JSON.stringify({ itemId: pendingItem })
       })
