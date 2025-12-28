@@ -1281,7 +1281,7 @@ body.light .my-items-btn:hover {
   box-shadow: 
     0 10px 30px rgba(79, 112, 255, 0.35);
 }
-=======
+
 body{
    font-family: "Poppins", sans-serif;
 }
@@ -3631,6 +3631,46 @@ form[novalidate] select:invalid {
 .user-meta i {
   font-size: 0.65rem;
   opacity: 0.9;
+}
+.back-btn-history {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+
+  padding: 8px 18px;
+  border-radius: 999px;
+
+  background: rgba(255, 255, 255, 0.15);
+  color: #baffb4;
+
+  border: 1.5px solid rgba(186, 255, 180, 0.6);
+
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+
+  cursor: pointer;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+
+  transition: all 0.25s ease;
+}
+.back-btn-history:hover {
+  background: rgba(186, 255, 180, 0.15);
+  color: #ffffff;
+  border-color: #baffb4;
+  transform: translateY(-1px);
+}
+.back-btn-history:active {
+  transform: scale(0.96);
+}
+@media (max-width: 768px) {
+  .back-btn-history {
+    top: 12px;
+    right: 12px;
+    padding: 6px 14px;
+    font-size: 13px;
+  }
 }
 
 

@@ -7,6 +7,7 @@ import { QRCodeCanvas } from "qrcode.react";
 import GlobalAlert from "./GlobalAlert";
 import { useAlert } from "../context/AlertContext";
 import GlobalLoader from "./GlobalLoader";
+import { timeAgo } from "../utils/time";
 
 function Dashboard() {
   const { showAlert } = useAlert();
@@ -199,9 +200,9 @@ function Dashboard() {
                         Claimed by <b>{item.claimedBy.name}</b>
                       </p>
                     )}
-
+                   <p><i class="fa-solid fa-clock"></i> {timeAgo(item.createdAt)}</p>
                     <p>{item.description}</p>
-
+                   
                     <p className="text-muted">
                       <i className="fa-solid fa-location-dot"></i>{" "}
                       {item.location}

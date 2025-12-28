@@ -68,7 +68,7 @@ function History() {
     <div className="container mt-4">
       <div className="d-flex justify-content-between mb-4">
         <h4>My Items</h4>
-        <button className="btn btn-outline-secondary" onClick={() => navigate("/dashboard")}>
+        <button className="btn btn-outline-secondary back-btn-history" onClick={() => navigate("/dashboard")}>
           Back
         </button>
       </div>
